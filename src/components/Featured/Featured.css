@@ -1,0 +1,5 @@
+.featured {
+  background-image: url("/src/images/featured.png");
+  background-repeat: no-repeat;
+  height: 300px;
+}
