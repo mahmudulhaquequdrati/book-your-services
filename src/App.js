@@ -1,7 +1,9 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
+import About from "./components/About/About";
 import AddServices from "./components/AddServices/AddServices";
 import AllOrder from "./components/AllOrder/AllOrder";
+
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -20,8 +22,14 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
+          <Route path="/about">
+            <About></About>
+          </Route>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/placeorder/:id">
+            <PlaceOrder></PlaceOrder>
           </Route>
           <PrivateRoute path="/myorders">
             <MyOrder></MyOrder>
@@ -32,6 +40,7 @@ function App() {
           <PrivateRoute path="/allorders">
             <AllOrder></AllOrder>
           </PrivateRoute>
+
           <PrivateRoute path="/placeorder">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute>

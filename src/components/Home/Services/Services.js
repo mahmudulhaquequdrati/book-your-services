@@ -4,7 +4,7 @@ import SingleService from "../SingleService/SingleService";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("/services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -19,10 +19,10 @@ const Services = () => {
             book your service today to explore london
           </p>
 
-          <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-4">
+          <div className=" grid grid-cols-1 gap-y-10 gap-x-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-4 lg:mx-24 lg:my-12 ">
             {services.map((service) => (
               <SingleService
-                key={service.key}
+                key={service._id}
                 service={service}
               ></SingleService>
             ))}

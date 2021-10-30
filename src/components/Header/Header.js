@@ -11,7 +11,7 @@ const navigation = [
   { name: "Home", to: "/", current: false },
 
   { name: "Add Services", to: "/addservices", current: false },
-  // { name: "Manage All Orders", to: "/allorders", current: false },
+  // { name: "Place Orders", to: "/placeorder", current: false },
   { name: "About us", to: "/about", current: false },
 ];
 
@@ -118,26 +118,30 @@ const Header = () => {
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <button
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                              >
-                                My Orders
-                              </button>
+                              <Link to="/myorders">
+                                <button
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
+                                  )}
+                                >
+                                  My Orders
+                                </button>
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <button
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                              >
-                                Manage all order
-                              </button>
+                              <Link to="/allorders">
+                                <button
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
+                                  )}
+                                >
+                                  Manage all order
+                                </button>
+                              </Link>
                             )}
                           </Menu.Item>
 

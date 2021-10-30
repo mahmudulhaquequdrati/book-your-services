@@ -9,7 +9,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   if (isLoading) {
     return (
       <div className="w-8 mx-auto">
-        <img class="animate-bounce w-6 h-6 " src={img} alt="arrow" />
+        <img className="animate-bounce w-6 h-6 " src={img} alt="arrow" />
       </div>
     );
   }
