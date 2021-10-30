@@ -8,9 +8,11 @@ const Featured = () => {
         YOUR PERFECT <br /> TOUR EXPERIENCE
       </h2>
       <p className="text-lg font-normal">Activities and accommodations</p>
-      <button className="text-sm font-medium  bg-red-400 py-2 px-4 mt-3 mb-6 rounded text-white">
-        Book Today
-      </button>
+      <a href="#srv">
+        <button className="text-sm font-medium  bg-red-400 py-2 px-4 mt-3 mb-6 rounded text-white">
+          Book Today
+        </button>
+      </a>
     </div>
   );
 };

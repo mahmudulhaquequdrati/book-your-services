@@ -9,7 +9,7 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div>
+    <div id="srv">
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-2 px-4 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-8">
           <h2 className="text-4xl text-center  tracking-tight text-gray-900 font-bold">

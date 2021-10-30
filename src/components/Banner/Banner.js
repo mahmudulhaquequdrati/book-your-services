@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Banner.css";
 
 const Banner = () => {
@@ -14,9 +15,12 @@ const Banner = () => {
             sturdy and mature
           </p>
         </div>
-        <button className=" py-3 px-5 mt-2 rounded-3xl bg-red-100">
-          Explore More
-        </button>
+
+        <a href="#srv">
+          <button className=" py-3 px-5 mt-2 rounded-3xl bg-red-100">
+            Explore More
+          </button>
+        </a>
       </div>
     </div>
   );

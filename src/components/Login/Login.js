@@ -5,14 +5,18 @@ import useAuth from "../../Hooks/useAuth";
 import img from "../../images/btn_google_light_pressed_hdpi.9.png";
 
 const Login = () => {
-  const { googleSignIn } = useAuth();
+  const { googleSignIn, setIsLoading } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/";
   const handleGoogleSignIn = () => {
-    googleSignIn().then((result) => {
-      history.push(redirect_uri);
-    });
+    googleSignIn()
+      .then((result) => {
+        history.push(redirect_uri);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   return (
     <div className="text-center text-2xl font-bold py-12 my-24 border w-1/4 mx-auto rounded-lg shadow-lg">

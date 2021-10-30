@@ -9,9 +9,10 @@ import useAuth from "../../Hooks/useAuth";
 
 const navigation = [
   { name: "Home", to: "/", current: false },
-  { name: "My Orders", to: "/myorders", current: false },
+
   { name: "Add Services", to: "/addservices", current: false },
-  { name: "Manage All Orders", to: "/allorders", current: false },
+  // { name: "Manage All Orders", to: "/allorders", current: false },
+  { name: "About us", to: "/about", current: false },
 ];
 
 function classNames(...classes) {
@@ -112,6 +113,30 @@ const Header = () => {
                                 )}
                               >
                                 Your Profile
+                              </button>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                My Orders
+                              </button>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <button
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                Manage all order
                               </button>
                             )}
                           </Menu.Item>
