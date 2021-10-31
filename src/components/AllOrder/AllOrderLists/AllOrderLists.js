@@ -6,7 +6,7 @@ const AllOrderLists = (props) => {
   const [users, setUsers] = useState([]);
   console.log(users);
   useEffect(() => {
-    fetch("http://localhost:5000/allusers")
+    fetch("https://grisly-alien-01596.herokuapp.com/allusers")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
@@ -14,7 +14,7 @@ const AllOrderLists = (props) => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to delete?");
     if (procced) {
-      const url = `http://localhost:5000/allusers/${id}`;
+      const url = `https://grisly-alien-01596.herokuapp.com/allusers/${id}`;
       fetch(url, {
         method: "DELETE",
       })

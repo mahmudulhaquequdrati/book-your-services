@@ -9,7 +9,7 @@ const MyOrder = (props) => {
   const handleDelete = (id) => {
     const procced = window.confirm("are you sure you want to delete?");
     if (procced) {
-      const url = `http://localhost:5000/allusers/${id}`;
+      const url = `https://grisly-alien-01596.herokuapp.com/allusers/${id}`;
       fetch(url, {
         method: "DELETE",
       })

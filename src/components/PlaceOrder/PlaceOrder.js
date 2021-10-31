@@ -32,7 +32,7 @@ const PlaceOrder = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://grisly-alien-01596.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -40,7 +40,7 @@ const PlaceOrder = () => {
   const handleDelete = (id) => {
     const procced = window.confirm("are you sure you want to delete?");
     if (procced) {
-      const url = `http://localhost:5000/services/${id}`;
+      const url = `https://grisly-alien-01596.herokuapp.com/services/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -59,12 +59,14 @@ const PlaceOrder = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     data.info = info;
-    axios.post("http://localhost:5000/users", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("succesfully order completed");
-        reset();
-      }
-    });
+    axios
+      .post("https://grisly-alien-01596.herokuapp.com/users", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("succesfully order completed");
+          reset();
+        }
+      });
   };
 
   return (

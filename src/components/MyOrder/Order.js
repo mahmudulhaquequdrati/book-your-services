@@ -4,7 +4,7 @@ import MyOrder from "./MyOrder";
 const Order = () => {
   const [usersinfo, setUsersInfo] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allusers")
+    fetch("https://grisly-alien-01596.herokuapp.com/allusers")
       .then((res) => res.json())
       .then((data) => setUsersInfo(data));
   }, []);

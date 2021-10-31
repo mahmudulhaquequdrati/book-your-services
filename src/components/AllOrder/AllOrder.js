@@ -5,7 +5,7 @@ import AllOrderLists from "./AllOrderLists/AllOrderLists";
 const AllOrder = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allusers")
+    fetch("https://grisly-alien-01596.herokuapp.com/allusers")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
