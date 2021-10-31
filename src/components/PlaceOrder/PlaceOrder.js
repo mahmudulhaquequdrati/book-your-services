@@ -22,24 +22,49 @@ const PlaceOrder = () => {
   const { id } = useParams();
   const [service, setService] = useState({});
 
+  const { _id, name, description, price, img } = service;
+
+  const info = {
+    name: name,
+    price: price,
+    img: img,
+    description: description,
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/services/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
 
+  const handleDelete = (id) => {
+    const procced = window.confirm("are you sure you want to delete?");
+    if (procced) {
+      const url = `http://localhost:5000/services/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            alert("reload the page to see");
+            //  setService(data)
+          }
+        });
+    }
+  };
+
   const [selectedSize, setSelectedSize] = useState(product.packs[0]);
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/orders", data).then((res) => {
+    data.info = info;
+    axios.post("http://localhost:5000/users", data).then((res) => {
       if (res.data.insertedId) {
         alert("succesfully order completed");
         reset();
       }
     });
-    // data.preventDefault();
-    console.log(data);
   };
 
   return (
@@ -144,18 +169,6 @@ const PlaceOrder = () => {
                     </div>
                   </RadioGroup>
                 </div>
-                {/* start form */}
-
-                {/* end form */}
-
-                {/* <Link to="/myorders">
-                  <button
-                    type="submit"
-                    className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Book Now
-                  </button>
-                </Link> */}
               </form>
               <div>
                 <form
@@ -202,6 +215,12 @@ const PlaceOrder = () => {
                   </p>
                 </div>
               </div>
+              <button
+                onClick={() => handleDelete(_id)}
+                className="text-2xl font-bold mt-8 mx-2 bg-red-500 text-white py-2 px-4 rounded"
+              >
+                Delete this service
+              </button>
             </div>
           </div>
         </div>

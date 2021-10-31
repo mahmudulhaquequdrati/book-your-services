@@ -8,7 +8,9 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import MyOrder from "./components/MyOrder/MyOrder";
+import MyProfile from "./components/Login/MyProfile";
+import Order from "./components/MyOrder/Order";
+import NotFound from "./components/NotFound/NotFound";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
@@ -25,25 +27,30 @@ function App() {
           <Route path="/about">
             <About></About>
           </Route>
+          <PrivateRoute path="/myprofile">
+            <MyProfile></MyProfile>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/placeorder/:id">
+          <PrivateRoute path="/placeorder/:id">
             <PlaceOrder></PlaceOrder>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/myorders">
-            <MyOrder></MyOrder>
+            <Order></Order>
           </PrivateRoute>
           <PrivateRoute path="/addservices">
             <AddServices></AddServices>
           </PrivateRoute>
-          <PrivateRoute path="/allorders">
+          <PrivateRoute path="/allusers">
             <AllOrder></AllOrder>
           </PrivateRoute>
-
           <PrivateRoute path="/placeorder">
             <PlaceOrder></PlaceOrder>
           </PrivateRoute>
+          <Route path="*">
+            <NotFound> </NotFound>
+          </Route>
         </Switch>
         <Footer></Footer>
       </BrowserRouter>
