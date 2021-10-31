@@ -22,8 +22,6 @@ const AllOrderLists = (props) => {
         .then((data) => {
           if (data.deletedCount) {
             alert("reload the page to see");
-            // const remaining = users.filter((user) => user._id !== id);
-            // setUsers(remaining);
           }
         });
     }
@@ -33,7 +31,6 @@ const AllOrderLists = (props) => {
     <div>
       <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
         <table className="min-w-full divide-y divide-gray-200">
-          {/* <thead className="bg-gray-50"> */}
           <tbody className="bg-white divide-y divide-gray-200">
             <tr className="text-center">
               <td className="lg:px-6 py-4 whitespace-nowrap w-2/4">
@@ -67,7 +64,6 @@ const AllOrderLists = (props) => {
               </td>
             </tr>
           </tbody>
-          {/* </thead> */}
         </table>
       </div>
     </div>

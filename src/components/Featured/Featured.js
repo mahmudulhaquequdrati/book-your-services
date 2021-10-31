@@ -3,7 +3,7 @@ import "./Featured.css";
 
 const Featured = () => {
   return (
-    <div className="featured bg-cover mx-6 my-6 text-2xl font-bold px-12 py-24 rounded-lg">
+    <div className="featured bg-cover mx-6 mb-6 text-2xl font-bold px-12 py-24 rounded-lg">
       <h2>
         YOUR PERFECT <br /> TOUR EXPERIENCE
       </h2>
