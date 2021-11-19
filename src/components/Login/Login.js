@@ -20,7 +20,7 @@ const Login = () => {
   };
   return (
     <div className="text-center text-2xl font-bold py-12 my-24 border w-1/4 mx-auto rounded-lg shadow-lg">
-      <h2>Please Login Here</h2>
+      <h2>Please Login Here !!</h2>
       <button
         onClick={handleGoogleSignIn}
         className="my-4 text-xl bg-red-500 text-white py-2 px-4 rounded-3xl "
